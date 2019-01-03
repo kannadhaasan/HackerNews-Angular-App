@@ -1,6 +1,14 @@
 # HackerNews
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
+Developed this project using above latest angular version. In this project I have extracted the all the stories and viewed at the front end
+
+## Deployment
+* Download the project using following url: https://github.com/kannadhaasan/HackerNews-Angular-App.git
+* Extract the zip at any folder in your local system
+* Open the command prompt and direct to project extracted folder
+* Run the following commands: npm install, ng serve
+* Now you can able to access the project using following URL: http://localhost:4200/
 
 ## Development server
 
