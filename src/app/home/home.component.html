@@ -1,0 +1,53 @@
+<html>
+  
+      <ul >
+            <li class="link" (click)="setAgian()">Stories</li>
+          
+              <li ><strong>Hacker  </strong> <strong>News</strong></li>
+          
+          
+              <li class="link" (click)="newUpdate()">New</li>
+          
+        </ul>
+
+        &nbsp;&nbsp;
+  
+  <body>
+  
+    <div class="container">
+      
+      <div class="row" style="margin-bottom: 10px;">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="input-group" style="border-radius: 20px">
+              <input class="form-control" style=" border-radius: 20px;font-family: 'Lora', serif;" name="query" id="query" [(ngModel)]="query" placeholder="Search news...">
+              <button class="input-group-addon btn btn-warning" (click)="search()" style="border-radius: 20px;font-family: 'Lora', serif;">Search</button>
+          </div>
+          <br>
+          <h3 style="text-align: center" *ngIf="!stories.length">No Result Found</h3>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3" style="margin-bottom: 5px"   *ngFor="let item of stories | paginate: { itemsPerPage: 20, currentPage: p }" >
+            
+            <div class="item-box">
+                <p style="color:white; font-weight: bold">{{item.time*1000 | date:'MMM d, y' }}</p>
+                <a href="{{item.url}}" target="_blank" class="box-title"><h5 class="box-title">{{item.title}}</h5></a>
+                <i>{{item.time*1000 |timeAgo}}</i>
+                <br>
+                <i style="color: black;margin-bottom: 0;padding-bottom: 0;">({{item.site}})</i>
+                <p style="color: black;margin-top: 0;padding-top: 0;">{{item.score}} points by {{item.by}}</p>
+              </div>
+            </div>
+          
+      </div>
+      &nbsp;
+      <div style="text-align: center">
+          <pagination-controls (pageChange)="p = $event" style="color:#4cb69f;font-size: 15px;font-family: 'Lora', serif;"></pagination-controls>
+      </div>
+
+    </div>
+  </body>  
+
+</html>
+
